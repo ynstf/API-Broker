@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Broker, Buyer, Reservation, Product, Salesman
+from .models import Broker, Buyer, Reservation, Product, Salesman, City
 
 class BrokerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,4 +25,9 @@ class ProductSerializer(serializers.ModelSerializer):
 class SalesmanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Salesman
+        fields = '__all__'
+        
+class CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
         fields = '__all__'

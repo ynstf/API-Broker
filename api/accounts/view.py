@@ -1,5 +1,5 @@
-from broker.serializers import SalesmanSerializer, BrokerSerializer, ReservationSerializer, BuyerSerializer, ProductSerializer
-from broker.models import Salesman, Broker, Reservation, Buyer, Product
+from api.serializers import SalesmanSerializer, BrokerSerializer, ReservationSerializer, BuyerSerializer, ProductSerializer
+from api.models import Salesman, Broker, Reservation, Buyer, Product
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
