@@ -1,9 +1,11 @@
-from . import views
-from django.urls import path
+
+from django.urls import path, include
 
 urlpatterns = [
-    path('products/',views.products),
-    path('product/<int:pk>',views.product),
-    path('find_product/',views.find_product),
+    # product
+    path('',include('broker.products.routs')),
+
+    path('',include('broker.accounts.routs')),
+
     
 ]
