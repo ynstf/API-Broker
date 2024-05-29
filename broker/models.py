@@ -17,7 +17,11 @@ class Broker(models.Model):
         save = 0
         for reservation in all_reservation:
             save += reservation.saveing()
-        return round(save/len(all_reservation),2)
+        
+        try :
+            return round(save/len(all_reservation),2)
+        except :
+            return 0
     
     def __str__(self):
         return self.name
@@ -54,8 +58,10 @@ class Reservation(models.Model):
     final_price = models.IntegerField()
 
     def  saveing(self):
-        save = round( (1-(self.final_price/self.product.price))*100 ,2)
-        return save
+        try :
+            return round( (1-(self.final_price/self.product.price))*100 ,2)
+        except:
+            return 0
 
     def __str__(self):
         return f"broker : {self.broker} ,product : {self.product}"
