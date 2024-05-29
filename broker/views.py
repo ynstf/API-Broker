@@ -20,7 +20,7 @@ def products(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             error = {"message" : "error to save this product"}
-            return Response(error, status=status.HTTP_201_CREATED)
+            return Response(error, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
 def find_product(request):
@@ -52,7 +52,7 @@ def product(request, pk):
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             error = {"message" : "error to update this product"}
-            return Response(error, status=status.HTTP_201_CREATED)
+            return Response(error, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     #delete the product if DELETE
     if request.method == 'DELETE':
