@@ -1,9 +1,6 @@
-from api.serializers import SalesmanSerializer, BrokerSerializer, ReservationSerializer, BuyerSerializer, ProductSerializer, CitySerializer
-from api.models import Salesman, Broker, Reservation, Buyer, Product, City
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import generics, mixins, viewsets
-
+from api.serializers import CitySerializer
+from api.models import City
+from rest_framework import viewsets
 
 class CityViewsets(viewsets.ModelViewSet):
     queryset = City.objects.all()

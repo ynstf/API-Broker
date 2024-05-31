@@ -65,4 +65,3 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"broker : {self.broker} ,product : {self.product}"
-    
