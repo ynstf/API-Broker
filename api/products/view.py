@@ -13,6 +13,7 @@ def products(request):
         return Response(serializer.data)
     
     if request.method == 'POST':
+        print(request.data)
         serializer = ProductSerializer(data= request.data)
         if serializer.is_valid():
             serializer.save()
